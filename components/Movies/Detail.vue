@@ -94,10 +94,10 @@
 
 <script setup>
 const { dataCategories } = useListCategories();
-const { reviews, popular, upcoming } = useListMovie();
+const { reviews, popular, release } = useListMovie();
 
 const route = useRoute()
 
-const details = popular?.results.filter((result) => result.id === parseInt(route.params.id))[0] ? popular?.results.filter((result) => result.id === parseInt(route.params.id))[0] : upcoming?.results.filter((result) => result.id === parseInt(route.params.id))[0]
+const details = popular?.results.filter((result) => result.id === parseInt(route.params.id))[0] ? popular?.results.filter((result) => result.id === parseInt(route.params.id))[0] : release?.results.filter((result) => result.id === parseInt(route.params.id))[0]
 
 </script>

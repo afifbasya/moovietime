@@ -30,7 +30,7 @@
                     />
                 </template>
 
-                <template v-if="activeGroup == 0" v-for="(movie, index) in upcoming?.results">
+                <template v-if="activeGroup == 0" v-for="(movie, index) in release?.results">
                     <CommonPoster
                         v-if="index < 10"
                         :url="'/movies/' + movie.id"
@@ -48,7 +48,7 @@
 
 <script setup>
 const { dataCategories } = useListCategories();
-const { popular, upcoming } = useListMovie();
+const { popular, release } = useListMovie();
 
 const activeGroup = useState('activeGroup', () => 0)
 const setActiveGroup = (index) => {
@@ -61,8 +61,8 @@ const groupItems = [
         path: "popular"
     },
     {
-        label: "Upcoming",
-        path: "upcoming"
+        label: "Release Date",
+        path: "release"
     },
 ]
 </script>
