@@ -1,0 +1,4 @@
+<template>
+    <HomeCarousel />
+    <HomeDiscoverMovies />
+</template>
