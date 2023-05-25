@@ -3,7 +3,7 @@
         <div 
             class="relative h-[468px] flex flex-col bg-cover bg-center bg-opacity-20" 
             :style="{ 
-                backgroundImage: 'linear-gradient(rgba(30, 35, 43, 0.8), rgba(30, 35, 43, 0.8)), url(https://image.tmdb.org/t/p/original' + details.backdrop_path + ')' 
+                backgroundImage: 'linear-gradient(rgba(30, 35, 43, 0.8), rgba(30, 35, 43, 0.8)), url(https://image.tmdb.org/t/p/original' + details?.backdrop_path + ')' 
             }"
         >
             <div class="w-screen h-full flex">
@@ -94,10 +94,10 @@
 
 <script setup>
 const { dataCategories } = useListCategories();
-const { popular, reviews } = useListMovie();
+const { reviews, popular, upcoming } = useListMovie();
 
 const route = useRoute()
 
-const details = popular?.results.filter((result) => result.id === parseInt(route.params.id))[0]
+const details = popular?.results.filter((result) => result.id === parseInt(route.params.id))[0] ? popular?.results.filter((result) => result.id === parseInt(route.params.id))[0] : upcoming?.results.filter((result) => result.id === parseInt(route.params.id))[0]
 
 </script>
